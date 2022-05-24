@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --lightblack: rgba(0,0,0,0.15);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, darkcyan 0%, rgb(127, 197, 255) 100%);
+    user-select: none;
+}
+.container {
+    position: relative;
+    width: 380px;
+    padding: 15px 20px;
+    background-color: rgba(0,0,0,0.60);
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0px 6px 15px var(--lightblack);
+    overflow: hidden;
+    margin-top: 25px;
+}
+.container i {
+    cursor: pointer;
+}
+
+.top-bar, .progress-area, .timer, .controls, .music-list .header, .music-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.top-bar i {
+    font-size: 27px;
+}
+.top-bar span {
+    font-size: 18px;
+}
+
+.song-cover {
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px var(--lightblack);
+}
+.song-cover img {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+
+.song-details {
+    text-align: center;
+    margin: 10px 0;
+}
+.song-name {
+    font-style: 20px;
+}
+#song-name {
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+#song-artist {
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.progress-area {
+    height: 6px;
+    width: 100%;
+    background: #f0f0f0;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.progress-area .progress-bar {
+    height: inherit;
+    position: relative;
+    width: 0;
+    border-radius: inherit;
+    background: linear-gradient(90deg, darkcyan 0%, rgb(127, 197, 255) 100%);
+}
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background: darkcyan;
+    border-radius: 50px;
+    top: 50%;
+    right: -5px;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    transform: translateY(-50%);
+}
+.progress-area:hover .progress-bar::before {
+    opacity: 1;
+}
+
+.timer span {
+    font-size: 13px;
+    background: (--lightblack);
+}
+#total {
+    margin-left: 285px;
+    margin-top: 5px;
+}
+#current {
+    margin-top: 5px;
+}
+
+.controls {
+    margin: 20px 0 5px 0;
+}
+.controls i {
+    font-size: 28px;
+    padding-bottom: 30px;
+    user-select: none;
+    background-color: white;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.controls i:nth-child(2),
+.controls i:nth-child(4) {
+    font-size: 43px;
+}
+.controls #prev-song {
+    margin-right: -13px;
+}
+.controls #next-song {
+    margin-right: -13px;
+}
+.play-pause {
+    background-color: white;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
+.play-pause i {
+    border-radius: 50%;
+    background-color: black;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+.music-list {
+    position: absolute;
+    left: 0;
+    bottom: -55%;
+    opacity: 0;
+    padding: 30px;
+    pointer-events: none;
+    background-color: white;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px -5px 10px var(--lightblack);
+    padding: 15px 30px;
+    transition: all 0.1s ease-out;
+}
+.music-list.show {
+    bottom: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+#music-list-icon {
+    color: black;
+}
+#music-list-heading {
+    color: black;
+}
+.s-name {
+    font-weight: bold;
+    font-size: larger;
+}
+.music-list .header .row {
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+}
+.header .row i {
+    cursor: default;
+}
+.header .row span {
+    margin-left: 5px;
+}
+.header #close-list {
+    font-size: 22px;
+    color: black;
+}
+.music-list ul {
+    margin: 10px 0;
+    max-height: 260px;
+    overflow-y: auto;
+}
+.music-list ul::-webkit-scrollbar {
+    width: 0px;
+}
+.music-list ul li {
+    list-style: none;
+    padding-bottom: 10px;
+    margin-top: 5px;
+    border-bottom: 1px solid bisque;
+    cursor: pointer;
+
+}
+.music-list ul li .row p {
+    font-size: 11px;
+    color: rgb(63, 57, 57);
+}
+
+@media only screen and (max-width:790px) {
+    .container {
+        width: 380px;
+        height: 520px;
+        margin-top: 75px;
+    }
+}
+
+
+
+
+
+
